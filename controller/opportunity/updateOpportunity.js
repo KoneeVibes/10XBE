@@ -2,7 +2,19 @@ const Opportunity = require("../../model/opportunity");
 
 const updateOpportunity = async (req, res) => {
     const { id = undefined } = req.params || {};
-    const { organizationName = undefined, opportunityDescription = undefined, organizationType = undefined, organizationContactEmail = undefined, organizationContactName = undefined, organizationContactPhone = undefined, organizationLocation = undefined, organizationWebsite = undefined, SDGs = undefined, others = undefined } = req.body || {};
+    const {
+        organizationName = undefined,
+        opportunityDescription = undefined,
+        organizationType = undefined,
+        organizationContactEmail = undefined,
+        organizationContactName = undefined,
+        organizationContactPhone = undefined,
+        organizationLocation = undefined,
+        organizationWebsite = undefined,
+        SDGs = undefined,
+        waysToSupport = undefined,
+        others = undefined
+    } = req.body || {};
     // check for complete payload
     if (!organizationName || !organizationType || !organizationContactName || !organizationLocation) {
         return res.status(400).json({
@@ -24,6 +36,7 @@ const updateOpportunity = async (req, res) => {
                     organizationLocation,
                     organizationWebsite,
                     SDGs,
+                    waysToSupport,
                     others,
                 }
             },

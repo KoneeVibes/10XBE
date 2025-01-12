@@ -74,6 +74,9 @@ const opportunitySchema = new Schema({
             ],
         },
     ],
+    waysToSupport: {
+        type: String,
+    },
     others: {
         type: String,
     },
