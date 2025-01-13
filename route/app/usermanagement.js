@@ -41,5 +41,10 @@ router.patch(
     "/user/status/:id",
     require("../../controller/user/suspendUser")
 );
+// To update user password
+router.patch(
+    "/user/password/:id",
+    require("../../controller/user/resetPassword")
+)
 
 module.exports = router;
